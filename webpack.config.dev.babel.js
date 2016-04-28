@@ -10,7 +10,7 @@ export default {
 		libraryTarget: 'umd',
 		path: buildPath,
 		publicPath: '/'
-	}
+	},
 	module: {
 		loaders: [
 			{ test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
@@ -36,7 +36,7 @@ export default {
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env': {
-				'NODE_ENV': process.env.NODE_ENV || 'dev',
+				'NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'dev'),
 			}
 		})
 	],
