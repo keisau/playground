@@ -7,5 +7,6 @@ import { App } from './containers'
 export default (
 	<Route path='/' component={App} >
 		<IndexRoute component={Index} />
+		<Route path='test' component={Index} />
 	</Route>
 )

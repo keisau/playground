@@ -7,19 +7,12 @@ import { render } from 'react-dom'
 import { Router, browserHistory } from 'react-router'
 
 /* redux */
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import { syncHistoryWithStore } from 'react-router-redux'
 
-import reducers from './reducers'
+import store from './store'
 import routes from './routes'
-
-const store = createStore(
-  combineReducers({
-    ...reducers,
-    routing: routerReducer
-  })
-)
 
 const history = syncHistoryWithStore(browserHistory, store)
 
